@@ -10,6 +10,7 @@ import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -24,8 +25,18 @@ public class APersonTest {
         p.print2();
     }
 
-    // method traverse and check whether annotation value set.
+    // running method by name
     public static void main1(String[] args) {
+        APerson p = new APerson(1, "Alex");
+        try {
+            Method met1 = p.getClass().getMethod("toString");
+            Object invoked = met1.invoke(p);
+            System.out.println(invoked);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored) { }
+    }
+
+    // method traverse and check whether annotation value set.
+    public static void main(String[] args) {
         //person.APerson p = new person.APerson(1, "Alex");
         //Method[] methods = p.getClass().getDeclaredMethods();
         Method[] methods = APerson.class.getDeclaredMethods();
@@ -45,7 +56,8 @@ public class APersonTest {
                     if (ta.smart()) {
                         System.out.printf("  X2: found target annotation (person.AnnMethod) with value `smart=true`: %s\n",ta.toString());
                         try {
-                            APerson p = APerson.class.getConstructor(Integer.class, String.class).newInstance(111, "Smart Alex");
+                            Constructor<APerson> constructor = APerson.class.getConstructor(Integer.class, String.class);
+                            APerson p = constructor.newInstance(111, "Smart Alex");
                             Method method = p.getClass().getMethod(m.getName());
                             method.invoke(p);
                         }
@@ -70,17 +82,7 @@ public class APersonTest {
         }
     }
 
-    // running method by name
-    public static void main2(String[] args) {
-        APerson p = new APerson(1, "Alex");
-        try {
-            Method met1 = p.getClass().getMethod("toString");
-            Object invoked = met1.invoke(p);
-            System.out.println(invoked);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored) { }
-    }
-
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Reflections r = new Reflections(new ConfigurationBuilder()
                 .setScanners(new SubTypesScanner(false /* don't exclude Object.class */), new ResourcesScanner())
                 .addUrls(ClasspathHelper.forJavaClassPath())

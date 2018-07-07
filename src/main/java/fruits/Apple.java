@@ -1,6 +1,6 @@
 package fruits;
 
-@Ready
+
 public class Apple implements Nameable {
     @Override
     public String name() {

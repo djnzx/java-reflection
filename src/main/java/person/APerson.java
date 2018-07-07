@@ -1,6 +1,6 @@
 package person;
 
-@AnnClass(author="Alex", birthday ="01.01.1991")
+@AnnClass(author="Alex", birthday="01.01.1991")
 public class APerson {
     @AnnField(key=true)
     private final int id;
@@ -12,11 +12,11 @@ public class APerson {
         this.name = name;
     }
 
-    @AnnMethod (smart = true)
     public void print1() {
         System.out.printf("PRINT1: %s\n", toString());
     }
 
+    @AnnMethod (smart = true)
     public void print2() {
         System.out.printf("PRINT2: %s\n", toString());
     }
