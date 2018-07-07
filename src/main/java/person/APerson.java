@@ -1,3 +1,5 @@
+package person;
+
 @AnnClass(author="Alex", birthday ="01.01.1991")
 public class APerson {
     @AnnField(key=true)
@@ -5,17 +7,16 @@ public class APerson {
     @AnnField
     private final String name;
 
-    public APerson(int id, String name) {
+    public APerson(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    @AnnMethod (smart = false)
+    @AnnMethod (smart = true)
     public void print1() {
         System.out.printf("PRINT1: %s\n", toString());
     }
 
-    @AnnMethod
     public void print2() {
         System.out.printf("PRINT2: %s\n", toString());
     }
