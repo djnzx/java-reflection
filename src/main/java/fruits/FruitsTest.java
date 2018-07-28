@@ -22,14 +22,18 @@ public class FruitsTest {
             @Override
             public void accept(Class<?> aClass) {
                 if(aClass.isAnnotationPresent(Ready.class)) {
-                    System.out.println(aClass.getName());
-                    try {
-                        Nameable o = (Nameable)aClass.newInstance();
-                        System.out.println(o.name());
-                    } catch (InstantiationException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+                    Ready annotation = aClass.getAnnotation(Ready.class);
+                    if (annotation.val()>50) {
+                        System.out.println("Ready:"+annotation.val());
+                        System.out.println(aClass.getName());
+                        try {
+                            Nameable o = (Nameable)aClass.newInstance();
+                            System.out.println(o.name());
+                        } catch (InstantiationException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

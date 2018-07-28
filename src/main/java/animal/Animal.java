@@ -1,12 +1,14 @@
 package animal;
 
+import javafx.fxml.FXML;
+
 @AnimalClassExtra(behavior="strong")
 public class Animal {
     @AnimalField
     private final String name;
 
     @AnimalMethod
-    public Animal(String name) {
+    public Animal(@FF String name) {
         this.name = name;
     }
 

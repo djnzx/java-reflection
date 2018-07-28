@@ -12,6 +12,7 @@ public class APerson {
         this.name = name;
     }
 
+
     public void print1() {
         System.out.printf("PRINT1: %s\n", toString());
     }
