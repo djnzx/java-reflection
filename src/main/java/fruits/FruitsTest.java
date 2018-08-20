@@ -23,6 +23,10 @@ public class FruitsTest {
             public void accept(Class<?> aClass) {
                 if(aClass.isAnnotationPresent(Ready.class)) {
                     Ready annotation = aClass.getAnnotation(Ready.class);
+                    System.out.println("OWNER:"+annotation.owner());
+                    if (annotation.owner().equals("Dima")) {
+
+                    }
                     if (annotation.val()>50) {
                         System.out.println("Ready:"+annotation.val());
                         System.out.println(aClass.getName());
@@ -35,6 +39,7 @@ public class FruitsTest {
                             e.printStackTrace();
                         }
                     }
+                    System.out.println("---");
                 }
             }
         });
