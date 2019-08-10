@@ -1,6 +1,6 @@
 package fruits;
 
-@Ready
+@Ready (val = 1)
 public class Plum implements Nameable {
     @Override
     public String name() {

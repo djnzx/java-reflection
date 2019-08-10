@@ -1,6 +1,7 @@
 package fruits;
 
-@Ready(val=51)
+@Ready (val = 45)
+@Tasty (level = 500)
 public class Banana implements Nameable {
     @Override
     public String name() {

@@ -21,6 +21,15 @@ public class FruitsTest {
         subTypesOf.forEach(new Consumer<Class<?>>() {
             @Override
             public void accept(Class<?> aClass) {
+                if (aClass.isAnnotationPresent(Ready.class))
+                    if (aClass.getAnnotation(Ready.class).val() > 40) {
+                        System.out.printf("%s %s\n",aClass, aClass.getAnnotation(Ready.class).val());
+                    }
+            }
+        });
+        subTypesOf.forEach(new Consumer<Class<?>>() {
+            @Override
+            public void accept(Class<?> aClass) {
                 if(aClass.isAnnotationPresent(Ready.class)) {
                     Ready annotation = aClass.getAnnotation(Ready.class);
                     System.out.println("OWNER:"+annotation.owner());

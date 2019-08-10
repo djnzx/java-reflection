@@ -1,6 +1,6 @@
 package fruits;
 
-@Ready (owner = "Dima")
+@Ready (owner = "Dima", val = 50)
 public class Apple implements Nameable {
     @Override
     public String name() {
