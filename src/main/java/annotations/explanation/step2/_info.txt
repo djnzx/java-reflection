@@ -1,0 +1,7 @@
+2nd step
+--------
+- marking with annotations (@Target(ElementType.METHOD))
+  - classes
+  - fields
+  - methods / functions / constructors
+  - parameters

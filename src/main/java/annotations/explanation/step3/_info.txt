@@ -1,0 +1,5 @@
+3rd step
+--------
+- deciding which ones must work
+  - in the compile time (all)
+  - in the runtime (marked with @Retention(value = RetentionPolicy.RUNTIME))

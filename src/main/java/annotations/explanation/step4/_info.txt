@@ -1,0 +1,3 @@
+4th step
+--------
+- enriching with properties (the syntax is similar to conventional annotation)
