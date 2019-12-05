@@ -1,6 +1,6 @@
 package annotations.examples.fruits.entity;
 
-@Ready
+@Rape(val = 30)
 public class Pineapple implements Nameable {
   @Override
   public String name() {

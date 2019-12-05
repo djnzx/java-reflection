@@ -1,8 +1,9 @@
 package annotations.examples.fruits.entity;
 
-@Ready (val = 45)
-@Tasty (level = 500)
+@Rape(val = 80)
 public class Banana implements Nameable {
+
+  @Tasty (level = 999)
   @Override
   public String name() {
     return "I'm Banana";

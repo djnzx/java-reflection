@@ -5,7 +5,7 @@ import annotations.explanation.step1.*;
 @Neutral
 public class MyCode {
 
-  @Good
+  @Good(author = "Alex")
   protected int x;
 
   @Better
