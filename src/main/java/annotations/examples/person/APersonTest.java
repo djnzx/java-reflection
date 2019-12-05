@@ -1,7 +1,7 @@
 package annotations.examples.person;
 
 import annotations.examples.fruits.entity.Nameable;
-import annotations.examples.fruits.entity.Rape;
+import annotations.examples.fruits.entity.Ripe;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
@@ -93,7 +93,7 @@ public class APersonTest {
         subTypesOf.forEach(new Consumer<Class<?>>() {
             @Override
             public void accept(Class<?> aClass) {
-                if(aClass.isAnnotationPresent(Rape.class)) {
+                if(aClass.isAnnotationPresent(Ripe.class)) {
                     System.out.println(aClass.getName());
                     try {
                         Nameable o = (Nameable)aClass.newInstance();

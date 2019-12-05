@@ -1,7 +1,7 @@
 package annotations.examples.fruits;
 
 import annotations.examples.fruits.entity.Nameable;
-import annotations.examples.fruits.entity.Rape;
+import annotations.examples.fruits.entity.Ripe;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
@@ -23,17 +23,17 @@ public class FruitsAppOne {
     subTypesOf.forEach(new Consumer<Class<?>>() {
       @Override
       public void accept(Class<?> aClass) {
-        if (aClass.isAnnotationPresent(Rape.class))
-          if (aClass.getAnnotation(Rape.class).val() > 40) {
-            System.out.printf("%s %s\n",aClass, aClass.getAnnotation(Rape.class).val());
+        if (aClass.isAnnotationPresent(Ripe.class))
+          if (aClass.getAnnotation(Ripe.class).val() > 40) {
+            System.out.printf("%s %s\n",aClass, aClass.getAnnotation(Ripe.class).val());
           }
       }
     });
     subTypesOf.forEach(new Consumer<Class<?>>() {
       @Override
       public void accept(Class<?> aClass) {
-        if(aClass.isAnnotationPresent(Rape.class)) {
-          Rape annotation = aClass.getAnnotation(Rape.class);
+        if(aClass.isAnnotationPresent(Ripe.class)) {
+          Ripe annotation = aClass.getAnnotation(Ripe.class);
           System.out.println("OWNER:"+annotation.owner());
           if (annotation.owner().equals("Dima")) {
 

@@ -1,13 +1,13 @@
 package annotations.examples.fruits;
 
 import annotations.examples.fruits.entity.Bicycle;
-import annotations.examples.fruits.entity.Rape;
+import annotations.examples.fruits.entity.Ripe;
 
 public class FruitsAppThree {
   public static void main(String[] args) throws NoSuchMethodException {
     Bicycle b = new Bicycle();
 
-    Rape a1 = b.getClass().getAnnotation(Rape.class);
+    Ripe a1 = b.getClass().getAnnotation(Ripe.class);
     System.out.println(a1.val());
   }
 }

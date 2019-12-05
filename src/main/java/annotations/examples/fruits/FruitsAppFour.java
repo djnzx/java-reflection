@@ -1,7 +1,6 @@
 package annotations.examples.fruits;
 
-import annotations.examples.fruits.entity.Nameable;
-import annotations.examples.fruits.entity.Rape;
+import annotations.examples.fruits.entity.Ripe;
 import annotations.examples.fruits.entity.Tasty;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -24,8 +23,8 @@ public class FruitsAppFour {
     );
     Set<Class<?>> classes = r.getSubTypesOf(Object.class);
     classes.forEach(aClass -> {
-      if (aClass.isAnnotationPresent(Rape.class)) { // 4 ....
-        Rape meta = aClass.getAnnotation(Rape.class);
+      if (aClass.isAnnotationPresent(Ripe.class)) { // 4 ....
+        Ripe meta = aClass.getAnnotation(Ripe.class);
         if (meta.val() > 50) { // 2 : Apple , Banana
           System.out.printf("Fruit:%s, level:%d\n", aClass.getSimpleName(), meta.val());
           try {

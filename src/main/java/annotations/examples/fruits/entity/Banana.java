@@ -1,6 +1,6 @@
 package annotations.examples.fruits.entity;
 
-@Rape(val = 80)
+@Ripe(val = 80)
 public class Banana implements Nameable {
 
   @Tasty (level = 999)
