@@ -6,4 +6,9 @@ public class Apple implements Nameable {
   public String name() {
     return "I'm Apple";
   }
+
+  @Tasty(level = 1)
+  public String newImpl(){
+    return "SuperTasty";
+  }
 }

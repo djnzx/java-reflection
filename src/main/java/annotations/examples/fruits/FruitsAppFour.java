@@ -21,9 +21,12 @@ public class FruitsAppFour {
         .addUrls(ClasspathHelper.forJavaClassPath())
         .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("annotations/examples/fruits/entity")))
     );
+
     Set<Class<?>> classes = r.getSubTypesOf(Object.class);
     classes.forEach(aClass -> {
+//      System.out.printf("CLASS: %s\n", aClass);
       if (aClass.isAnnotationPresent(Ripe.class)) { // 4 ....
+//      System.out.printf("CLASS: %s\n", aClass);
         Ripe meta = aClass.getAnnotation(Ripe.class);
         if (meta.val() > 50) { // 2 : Apple , Banana
           System.out.printf("Fruit:%s, level:%d\n", aClass.getSimpleName(), meta.val());
